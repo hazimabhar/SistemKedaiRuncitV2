@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url(/font/helvetica/HelveticaNeue-Roman.opt) format('opentype');
+  }
+
+@layer utilities{
+    .sidebar{
+        @apply w-[260px] text-[#616161] shadow-box-shadow h-screen relative duration-500;
+    }
+    .w-5-percent {
+        @apply w-[85px] duration-500
+    }
+    .disappear{
+        @apply scale-0 
+    }
+    .option-text{
+        @apply text-[14px] origin-left min-w-fit
+    }
+    .user-icon{
+        @apply inline-flex  p-5 text-center items-center
+    }
+    .option-icon{
+        @apply text-[25px] mr-5 block float-left min-w-fit cursor-pointer
+    }
+    .navigation-option{
+        @apply py-5 px-8 font-semibold inline-flex text-center items-center
+    }
+}

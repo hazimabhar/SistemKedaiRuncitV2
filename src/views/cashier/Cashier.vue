@@ -1,0 +1,3 @@
+<template>
+    Cashier
+</template>
