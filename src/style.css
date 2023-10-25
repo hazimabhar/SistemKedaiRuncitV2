@@ -12,7 +12,7 @@
         @apply w-[270px] text-[#616161] shadow-box-shadow min-h-screen relative duration-500;
     }
     .w-5-percent {
-        @apply w-[85px] duration-500
+        @apply w-[80px] duration-500
     }
     .disappear{
         @apply scale-0 
@@ -21,18 +21,21 @@
         @apply text-[14px] origin-left min-w-fit
     }
     .user-icon{
-        @apply inline-flex  p-5 text-center items-center
+        @apply inline-flex px-[13px] py-5 text-center items-center
     }
     .option-icon{
         @apply text-[25px] mr-5 block float-left min-w-fit cursor-pointer
     }
     .navigation-option{
-        @apply py-5 px-8 font-semibold inline-flex text-center items-center cursor-pointer
+        @apply py-5 px-6 font-semibold inline-flex text-center items-center cursor-pointer
     }
     .sub-menu{
-        @apply py-5 px-16 font-semibold inline-flex text-center items-center
+        @apply py-5 px-5 font-semibold flex text-center items-center cursor-pointer hover:bg-[#e3e3e3] w-[78%] mx-auto rounded-lg
     }
     .close-submenu{
         @apply hidden
+    }
+    .option-background{
+        @apply cursor-pointer flex hover:bg-[#e3e3e3] w-[90%] mx-auto items-center rounded-lg
     }
 }
