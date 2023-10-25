@@ -27,7 +27,7 @@
         @apply text-[25px] mr-5 block float-left min-w-fit cursor-pointer
     }
     .navigation-option{
-        @apply py-5 px-8 font-semibold inline-flex text-center items-center
+        @apply py-5 px-8 font-semibold inline-flex text-center items-center cursor-pointer
     }
     .sub-menu{
         @apply py-5 px-16 font-semibold inline-flex text-center items-center
