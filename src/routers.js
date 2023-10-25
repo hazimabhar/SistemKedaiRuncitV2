@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Dashboard from './views/dashboard/Dashboard.vue'
 import Login from './views/Login.vue'
 import Inventory from './views/inventory/Inventory.vue'
-import Categories from './views/categories/Categories.vue'
+import Catalogue from './views/catalogue/Catalogue.vue'
 import Cashier from './views/cashier/Cashier.vue'
 import Closing from './views/closing/Closing.vue'
 import User from './views/user/UserListing.vue'
@@ -48,33 +48,113 @@ const router = createRouter({
                     path: '', 
                     name: 'Add Product',
                     component:'',
-                    icon:'',
-                },
-                {
-                    path: '', 
-                    name: 'Delete Product',
-                    component:'',
-                    icon:'',
-                },
-                {
-                    path: '', 
-                    name: 'Update Product',
-                    component:'',
-                    icon:'',
+                    icon:'zondicons:add-solid',
                 },
                 {
                     path: '', 
                     name: 'Add Stock',
                     component:'',
-                    icon:'',
+                    icon:'material-symbols:box-add',
+                },
+                {
+                    path: '', 
+                    name: 'Update Product',
+                    component:'',
+                    icon:'icon-park-solid:update-rotation',
+                },
+                {
+                    path: '', 
+                    name: 'Delete Product',
+                    component:'',
+                    icon:'fluent:delete-32-filled',
                 },
             ],
           },          
           {
-            path: 'categories',
-            name: 'Categories',
-            component: Categories,
+            path: 'catalogue',
+            name: 'Catalogue',
+            component: Catalogue,
             icon: 'material-symbols:category' ,
+            children: [
+            {
+              path: '', 
+              name: 'Fresh Food',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Groceries',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Household Essentials',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Electronic',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Fashion',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Home & Garden',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'House Brands',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Sport Equipment',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Toys',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Pet Supplies',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Office Supplies',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Book and Magazines',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+            {
+              path: '', 
+              name: 'Gift and Flowers',
+              component:'',
+              icon:'zondicons:add-solid',
+            },
+          ],
           },
           {
             path: 'cashier',

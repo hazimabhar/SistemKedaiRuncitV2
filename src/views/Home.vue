@@ -32,7 +32,7 @@
                     {{ $router.options.routes[1].name}}
                 </router-link>            
             </div>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between" @click="openInventory">
                 <div class="navigation-option">
                     <Icon :icon="$router.options.routes[1].children[2].icon" class="option-icon" 
                     @click=alwaysOpen
@@ -47,17 +47,26 @@
                     </router-link>            
                 </div>
                 <div>
-                    <Icon icon="subway:down-2" class="text-[15px] mr-8" :class="{'disappear': !isOpen}"/>
-                    
+                    <Icon icon="subway:down-2" class="text-[15px] mr-8 cursor-pointer" :class="{'disappear': !isOpen} "/>
                 </div>
             </div>
-                <div class="flex items-center justify-between">
+            <div v-for="child in $router.options.routes[1].children[2].children" :key="child.name" class="sub-menu" :class="{ 'close-submenu': !inventoryDropown  }">
+                 <div class="flex">
+                    <div class="option-icon" :class="{ 'close-submenu': !isOpen }" >
+                        <Icon :icon="child.icon"/>
+                    </div>
+                    <div class="option-text" :class="{ 'close-submenu': !isOpen }" >
+                        {{ child.name }}
+                    </div>
+                 </div>   
+            </div>
+                <div class="flex items-center justify-between" @click="openCatalogue">
                     <div class=" navigation-option">
                     <Icon :icon="$router.options.routes[1].children[3].icon" class="option-icon"
                     @click=alwaysOpen
                     />
                         <router-link
-                            :to="{ name: 'Categories'}"
+                            :to="{ name: 'Catalogue'}"
                             type="button"
                             class="option-text"
                             :class="{'disappear': !isOpen}"
@@ -66,8 +75,18 @@
                         </router-link>      
                     </div>
                     <div>
-                        <Icon icon="subway:down-2" class="text-[15px] mr-8" :class="{'disappear': !isOpen}"/>
+                        <Icon icon="subway:down-2" class="text-[15px] mr-8 cursor-pointer" :class="{'disappear': !isOpen}"/>
                     </div>
+                </div>
+                <div v-for="child in $router.options.routes[1].children[3].children" :key="child.name" class="sub-menu" :class="{ 'close-submenu': !catalogueDropown  }">
+                    <div class="flex">
+                        <div class="option-icon" :class="{ 'close-submenu': !isOpen }" >
+                            <Icon :icon="child.icon"/>
+                        </div>
+                        <div class="option-text" :class="{ 'close-submenu': !isOpen }" >
+                            {{ child.name }}
+                        </div>
+                    </div>   
                 </div>
             <div class="navigation-option">
                 <Icon :icon="$router.options.routes[1].children[6].icon" class="option-icon" 
@@ -122,7 +141,7 @@
                     {{ $router.options.routes[1].name}}
                 </router-link>            
             </div>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between" @click="openInventory">
                 <div class="navigation-option">
                     <Icon :icon="$router.options.routes[1].children[2].icon" class="option-icon" 
                     @click=alwaysOpen
@@ -137,27 +156,47 @@
                     </router-link>            
                 </div>
                 <div>
-                    <Icon icon="subway:down-2" class="text-[15px] mr-8" :class="{'disappear': !isOpen}"/>
+                    <Icon icon="subway:down-2" class="text-[15px] mr-8 cursor-pointer" :class="{'disappear': !isOpen} "/>
                 </div>
             </div>
-                <div class="flex items-center justify-between">
-                    <div class=" navigation-option">
-                    <Icon :icon="$router.options.routes[1].children[3].icon" class="option-icon"
-                    @click=alwaysOpen
-                    />
-                        <router-link
-                            :to="{ name: 'Categories'}"
-                            type="button"
-                            class="option-text"
-                            :class="{'disappear': !isOpen}"
-                            >
-                            {{ $router.options.routes[1].children[3].name}}
-                        </router-link>      
+            <div v-for="child in $router.options.routes[1].children[2].children" :key="child.name" class="sub-menu" :class="{ 'close-submenu': !inventoryDropown  }">
+                 <div class="flex">
+                    <div class="option-icon" :class="{ 'close-submenu': !isOpen }" >
+                        <Icon :icon="child.icon"/>
                     </div>
-                    <div>
-                        <Icon icon="subway:down-2" class="text-[15px] mr-8" :class="{'disappear': !isOpen}"/>
+                    <div class="option-text" :class="{ 'close-submenu': !isOpen }" >
+                        {{ child.name }}
                     </div>
+                 </div>   
+            </div>
+            <div class="flex items-center justify-between" @click="openCatalogue">
+                <div class=" navigation-option">
+                <Icon :icon="$router.options.routes[1].children[3].icon" class="option-icon"
+                @click=alwaysOpen
+                />
+                    <router-link
+                        :to="{ name: 'Catalogue'}"
+                        type="button"
+                        class="option-text"
+                        :class="{'disappear': !isOpen}"
+                        >
+                        {{ $router.options.routes[1].children[3].name}}
+                    </router-link>      
                 </div>
+                <div>
+                    <Icon icon="subway:down-2" class="text-[15px] mr-8 cursor-pointer" :class="{'disappear': !isOpen}"/>
+                </div>
+            </div>
+            <div v-for="child in $router.options.routes[1].children[3].children" :key="child.name" class="sub-menu" :class="{ 'close-submenu': !catalogueDropown  }">
+                <div class="flex">
+                    <div class="option-icon" :class="{ 'close-submenu': !isOpen }" >
+                        <Icon :icon="child.icon"/>
+                    </div>
+                    <div class="option-text" :class="{ 'close-submenu': !isOpen }" >
+                        {{ child.name }}
+                    </div>
+                </div>   
+            </div>
             <div class="navigation-option">
                 <Icon :icon="$router.options.routes[1].children[4].icon" class="option-icon"
                 @click=alwaysOpen
@@ -185,7 +224,9 @@
                 </router-link>            
             </div>
         </div>
-        <router-view/>
+        <div class="p-10">
+            <router-view/>
+        </div>
     </div>
 
 </template>
@@ -204,15 +245,27 @@ export default{
     data(){
         return{
             isOpen: true,
+            inventoryDropown: false,
+            catalogueDropown: false,
         }
     },
     methods:{
         sideBarOpen(){
             this.isOpen = !this.isOpen
+            this.inventoryDropown = false
+            this.catalogueDropown = false
         },
         alwaysOpen(){
             this.isOpen = true
         },
+        openInventory(){
+            this.inventoryDropown = !this.inventoryDropown
+            this.catalogueDropown = false
+        },
+        openCatalogue(){
+            this.catalogueDropown = !this.catalogueDropown
+            this.inventoryDropown = false
+        }
     },
 }
 </script>

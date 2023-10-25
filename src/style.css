@@ -9,7 +9,7 @@
 
 @layer utilities{
     .sidebar{
-        @apply w-[260px] text-[#616161] shadow-box-shadow h-screen relative duration-500;
+        @apply w-[270px] text-[#616161] shadow-box-shadow min-h-screen relative duration-500;
     }
     .w-5-percent {
         @apply w-[85px] duration-500
@@ -28,5 +28,11 @@
     }
     .navigation-option{
         @apply py-5 px-8 font-semibold inline-flex text-center items-center
+    }
+    .sub-menu{
+        @apply py-5 px-16 font-semibold inline-flex text-center items-center
+    }
+    .close-submenu{
+        @apply hidden
     }
 }
