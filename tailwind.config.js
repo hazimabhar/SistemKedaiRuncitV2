@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'helvetica': ['Helvetica', 'Times New Roman'],
+        'sans': ['Poppins', 'sans-serif'],
       },
       boxShadow:{
         'box-shadow': '5px 0px 5px 0px rgba(0,0,0,0.1)'

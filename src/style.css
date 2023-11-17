@@ -18,13 +18,13 @@
         @apply scale-0 
     }
     .option-text{
-        @apply text-[14px] origin-left min-w-fit
+        @apply text-[13px] origin-left min-w-fit
     }
     .user-icon{
         @apply inline-flex px-[13px] py-5 text-center items-center
     }
     .option-icon{
-        @apply text-[25px] mr-5 block float-left min-w-fit cursor-pointer
+        @apply text-[23px] mr-5 block float-left min-w-fit cursor-pointer
     }
     .navigation-option{
         @apply py-5 px-6 font-semibold inline-flex text-center items-center cursor-pointer

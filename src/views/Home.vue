@@ -139,7 +139,7 @@
                 </router-link>
             </div>
         </div>
-        <div class="p-10">
+        <div class="pt-10 pl-16">
             <router-view/>
         </div>
     </div>
