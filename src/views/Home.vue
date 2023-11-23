@@ -139,7 +139,7 @@
                 </router-link>
             </div>
         </div>
-        <div class="pt-10 pl-16">
+        <div class="py-10 px-16 w-full ">
             <router-view/>
         </div>
     </div>
