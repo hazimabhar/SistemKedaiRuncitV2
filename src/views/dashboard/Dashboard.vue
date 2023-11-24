@@ -75,6 +75,7 @@ export default {
                 "/test.png",
                 "/favicon.ico",
                 "/test.png",
+                "/favicon.ico",
             ],
             currentPicture:[],
             totalPartition:0,
@@ -105,7 +106,8 @@ export default {
             }
         },
         nextPicture(){
-            if(this.currentPicture.length==3){
+            const lastPage = this.totalPartition-1
+            if(this.imageNumber < lastPage){
                 this.imageNumber++
                 this.picturePartition()
             }
