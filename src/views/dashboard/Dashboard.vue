@@ -11,6 +11,7 @@
                 icon="icon-park:right" 
                 class="text-[25px] shadow-box-shadow rounded-full top-[75px] bg-white cursor-pointer block float-left rotate-180"
                 @click="prevPicture"
+                :class="{ 'cursor-not-allowed opacity-40': prevArrow }"
             />        
         </div>
         <div class="flex p-2 gap-10">
@@ -23,12 +24,15 @@
                 icon="icon-park:right" 
                 class="text-[25px]  shadow-box-shadow rounded-full top-[75px] bg-white cursor-pointer block float-left"
                 @click="nextPicture"
+                :class="{ 'cursor-not-allowed opacity-40': nextArrow }"
             /> 
         </div>
     </div>
     <div class="flex items-center select-none justify-center gap-2">
         <div v-for="(partition, index) in totalPartition" :key="index">
-            <div class="bg-[#D9D9D9] flex items-center justify-center w-2 h-2 rounded-full p-1">
+            <div v-if="index == imageNumber" class="bg-[#000000] flex items-center justify-center w-2 h-2 rounded-full p-1">
+            </div>
+            <div v-else class="bg-[#D9D9D9] flex items-center justify-center w-2 h-2 rounded-full p-1">
             </div>
         </div>
     </div>
@@ -79,6 +83,9 @@ export default {
             ],
             currentPicture:[],
             totalPartition:0,
+            prevArrow: false,
+            nextArrow:false,
+            lastPage:0,
         }
     },
     components:{
@@ -95,20 +102,23 @@ export default {
             this.currentPicture = this.lowInStock.slice(startIndex, startIndex + 3)
 
             this.totalPartition=Math.ceil(this.lowInStock.length/3)
+
+            this.lastPage = this.totalPartition-1
+
+            this.prevArrow = this.imageNumber === 0;
+            this.nextArrow = this.imageNumber === this.lastPage;
         },
         prevPicture(){
-            if (this.imageNumber == 0){
-                this.picturePartition()
-            }
-            else{
+            if (this.imageNumber > 0){
                 this.imageNumber--
                 this.picturePartition()
+                this.nextArrow = false
             }
         },
         nextPicture(){
-            const lastPage = this.totalPartition-1
-            if(this.imageNumber < lastPage){
+            if(this.imageNumber < this.lastPage){
                 this.imageNumber++
+                this.prevArrow=false
                 this.picturePartition()
             }
         }
